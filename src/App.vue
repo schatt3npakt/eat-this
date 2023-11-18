@@ -72,7 +72,7 @@
         <div class="dialog">
           <div
             v-for="(item, index) in currentOrder"
-            :style="`background: url('../assets/flavors.png') -96px ${item * -32}px;`"
+            :style="`background-position: -96px ${item * -32}px;`"
             :key="index"
           ></div>
         </div>
@@ -99,7 +99,7 @@
           <div class="scoops">
             <div
               v-for="(scoop, index) in scoops"
-              :style="`background: url('../assets/flavors.png') ${
+              :style="`background-position: ${
                 scoop.durability * -32
               }px ${scoop.flavor * -32}px;`"
               :key="index"
@@ -111,7 +111,7 @@
 
         <div class="ice-tray">
           <button
-            :style="`background: url('../assets/icecream.png') 0 ${index * -45}px`"
+            :style="`background-position: 0 ${index * -45}px`"
             v-for="(flavor, index) in flavors"
             :key="index"
             @click="updateScoops(flavor)"
@@ -222,6 +222,7 @@
           height: 40px;
 
           & div {
+            background: url('../assets/flavors.png');
             width: 32px;
             height: 32px;
           }
@@ -296,6 +297,7 @@
             flex-flow: column;
 
             & div {
+              background: url('../assets/flavors.png');
               width: 32px;
               height: 32px;
               margin-top: -16px;
@@ -346,6 +348,7 @@
           grid-template-columns: 1fr 1fr;
 
           & button {
+            background: url('../assets/icecream.png');
             border-radius: 0;
             cursor: pointer;
             border: none;
